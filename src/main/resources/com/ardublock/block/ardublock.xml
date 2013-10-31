@@ -3578,7 +3578,7 @@
 		</BlockGenus>
 		
 		<!--**************************************Adafruit*********************************** -->
-		<BlockGenus name="ada_dc_motor_fwd" kind="command" color="216 5 10" initlabel="bg.ada_dc_motor_fwd">
+		<BlockGenus name="ada_dc_motor_fwd" kind="command" color="94 134 164" initlabel="bg.ada_dc_motor_fwd">
 			<description>
 				<text>Adafruit DC motor</text>
 			</description>
@@ -3596,7 +3596,7 @@
 				</Image> -->
 			</Images>
 		</BlockGenus>
-		<BlockGenus name="ada_dc_motor_bwd" kind="command" color="216 5 10" initlabel="bg.ada_dc_motor_bwd">
+		<BlockGenus name="ada_dc_motor_bwd" kind="command" color="94 134 164" initlabel="bg.ada_dc_motor_bwd">
 			<description>
 				<text>Adafruit DC motor</text>
 			</description>
@@ -3614,7 +3614,7 @@
 				</Image> -->
 			</Images>
 		</BlockGenus>
-		<BlockGenus name="ada_dc_motor_release" kind="command" color="216 5 10" initlabel="bg.ada_dc_motor_release">
+		<BlockGenus name="ada_dc_motor_release" kind="command" color="94 134 164" initlabel="bg.ada_dc_motor_release">
 			<description>
 				<text>Adafruit DC motor</text>
 			</description>
@@ -3630,6 +3630,19 @@
 				<!-- <Image>
 					<FileLocation>com/ardublock/block/bulk/moteur-dc-release.jpg</FileLocation>
 				</Image> -->
+			</Images>
+		</BlockGenus>
+		<!--**************************************SparkFun*********************************** -->
+		<BlockGenus name="sfe_blink" kind="command" color="239 49 37" initlabel="bg.sfe_blink">
+			<description>
+				<text>SparkFun Blink</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.pin_number">
+					<DefaultArg genus-name="number" label="13" />
+				</BlockConnector>
+			</BlockConnectors>
+			<Images>
 			</Images>
 		</BlockGenus>
 	</BlockGenuses>
@@ -3731,6 +3744,9 @@
 			<FamilyMember>ada_dc_motor_fwd</FamilyMember>
 			<FamilyMember>ada_dc_motor_bwd</FamilyMember>
 			<FamilyMember>ada_dc_motor_release</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>sfe_blink</FamilyMember>
 		</BlockFamily>
 	</BlockFamilies>
 
@@ -3957,10 +3973,13 @@
 				<BlockGenusMember>seeed_joystick</BlockGenusMember>
 				<BlockGenusMember>seeed_joystick_button</BlockGenusMember>
 			</BlockDrawer>
-			<BlockDrawer button-color="216 5 10" name="bd.adafruit" type="factory">
+			<BlockDrawer button-color="94 134 164" name="bd.adafruit" type="factory">
 				<BlockGenusMember>ada_dc_motor_fwd</BlockGenusMember>
 				<BlockGenusMember>ada_dc_motor_bwd</BlockGenusMember>
 				<BlockGenusMember>ada_dc_motor_release</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="239 49 37" name="bd.sparkfun" type="factory">
+				<BlockGenusMember>sfe_blink</BlockGenusMember>
 			</BlockDrawer>
 			<!--
 			<BlockDrawer button-color="135 206 235" name="bd.linksprite_LinkerKit">
