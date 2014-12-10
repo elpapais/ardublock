@@ -49,7 +49,7 @@
 		<!-- ******************** Controls Menu *************** -->
 		<BlockGenus name="program" kind="command" color="255 240 0" initlabel="bg.program" is-starter="yes" is-terminator="yes" label-unique="no">
 			<description>
-				<text>this is the loop of the arduino</text>
+				<text>setup and loop functions of the arduino</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="cmd" connector-kind="socket" label="bc.setup" />
@@ -58,7 +58,7 @@
 		</BlockGenus>
 		<BlockGenus name="loop" kind="command" color="255 240 0" initlabel="bg.loop" is-starter="yes" is-terminator="yes" label-unique="yes">
 			<description>
-				<text>this is the loop of the arduino</text>
+				<text>loop function of the arduino</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="cmd" connector-kind="socket" label="bc.do" />
@@ -83,19 +83,14 @@
 		<BlockGenus name="if" kind="command" initlabel="bg.if" color="255 221 0">
 			<description>
 				<text>
-					If
-					<arg n="1" />
-					is true, the agent will run the blocks attached to
-					<arg n="2" />
+					if the test is true, the agent will run the blocks attached to the "then."
 				</text>
 				<arg-description n="1" name="test">
-					The condition being
-					tested.
+					the condition being tested.
 				</arg-description>
 
 				<arg-description n="2" name="then">
-					The set of instructions
-					that is done when the condition is true.
+					the set of instructions executed when the condition is true.
 				</arg-description>
 			</description>
 			<BlockConnectors>
@@ -107,22 +102,18 @@
 		<BlockGenus name="ifelse" kind="command" initlabel="bg.ifelse" color="255 221 0">
 			<description>
 				<text>
-					Does the first set of commands if the condition specified is
-					true, otherwise it will do the second set of commands.
+					if the condition specified is true executes the "then" block, otherwise it will do the "else" commands.
 				</text>
 				<arg-description n="1" name="test">
-					The condition being
-					tested.
+					The condition being tested.
 				</arg-description>
 
 				<arg-description n="2" name="then">
-					The set of instructions
-					that is done when the condition is true.
+					The set of instructions	that is done when the condition is true.
 				</arg-description>
 
 				<arg-description n="3" name="else">
-					The set of instructions
-					that is done when the condition is false.
+					The set of instructions	that is done when the condition is false.
 				</arg-description>
 			</description>
 			<BlockConnectors>
@@ -135,7 +126,7 @@
 		<BlockGenus name="while" kind="command" initlabel="bg.while" color="255 221 0">
 			<description>
 				<text>
-					While Block
+					while the condition is true, execute the contents of this loop.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -147,7 +138,7 @@
 	<BlockGenus name="do_while" kind="command" initlabel="bg.do_while" color="255 221 0">
           <description>
             <text>
-                Do While Block
+                do the loop first, then check if the while condition is met, if it is execute until it's not.
             </text>
           </description>
           <BlockConnectors>
@@ -160,7 +151,7 @@
 
 		<BlockGenus name="repeat_times" kind="command" color="255 221 0" initlabel="bg.repeat_times">
 			<description>
-				<text>Repeat the commands for "times"</text>
+				<text>repeat a block of code a specified number of times</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.repeat_times">
@@ -172,7 +163,7 @@
 
 		<BlockGenus name="repeat" kind="command" color="255 221 0" initlabel="bg.repeat">
 			<description>
-				<text>repeat</text>
+				<text>repeat a specified number of times and increment a variable each time</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.variable">
@@ -186,7 +177,7 @@
 		</BlockGenus>
 		<BlockGenus name="subroutine" kind="command" color="200 200 0" initlabel="bg.subroutine" is-starter="yes" is-terminator="yes" label-unique="yes" editable-label="yes">
 			<description>
-				<text>subroutine</text>
+				<text>define a block of code as a call-able block called a subroutine</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector label="commands" connector-type="cmd" connector-kind="socket" />
@@ -195,12 +186,12 @@
 
 		<BlockGenus name="subroutine-ref" kind="command" color="200 200 0" initlabel="bg.subroutine" editable-label="yes">
 			<description>
-				<text>invoke subroutine</text>
+				<text>invoke a subroutine</text>
 			</description>
 		</BlockGenus>
 		<BlockGenus name="delay_microseconds" kind="command" color="255 221 0" initlabel="bg.delay_microseconds">
 			<description>
-				<text>program delay in x milliseconds</text>
+				<text>delay for a number of milliseconds</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.microseconds">
@@ -230,7 +221,7 @@
 		
 		<BlockGenus name="scoop_sleep" kind="command" color="26 97 218" initlabel="bg.scoop_sleep">
 			<description>
-				<text>program sleep in x milliseconds</text>
+				<text>delay for a number of milliseconds</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.milliseconds">
@@ -304,7 +295,7 @@
 
 		<BlockGenus name="pin-read-digital" kind="data" color="77 191 169" initlabel="bg.pin-read-digital">
 			<description>
-				<text>Read digital from the pin</text>
+				<text>Read HIGH or LOW from a digital pin</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="#">
@@ -317,7 +308,7 @@
 
 		<BlockGenus name="pin-read-digital-pullup" kind="command" color="77 191 169" initlabel="bg.pin-write-digital">
 			<description>
-				<text>write digital to pin</text>
+				<text>Set a digital pin pull-up resistor</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="#">
@@ -328,7 +319,7 @@
 
 		<BlockGenus name="pin-read-analog" kind="data" color="77 191 169" initlabel="bg.pin-read-analog">
 			<description>
-				<text>Read analog value from pin</text>
+				<text>Read 0-1023 from an analog pin</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="#">
@@ -339,7 +330,7 @@
 		</BlockGenus>
 		<BlockGenus name="pin-write-digital" kind="command" color="77 191 169" initlabel="bg.pin-write-digital">
 			<description>
-				<text>write digital to pin</text>
+				<text>Write a digital pin HIGH or LOW</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="#">
@@ -353,7 +344,7 @@
 
 		<BlockGenus name="pin-write-analog" kind="command" color="77 191 169" initlabel="bg.pin-write-analog">
 			<description>
-				<text>write analog to pin</text>
+				<text>Write an analog output from 0 to 255</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="#">
@@ -378,8 +369,7 @@
 		
 		<BlockGenus name="tone" kind="command" color="95 120 132" initlabel="tone">
 			<description>
-				<text>Generates a square wave of the specified frequency (and 50%
-					duty cycle) on a pin.
+				<text>Generates a square wave of the specified frequency (and 50% duty cycle) on a pin.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -395,8 +385,7 @@
 
 		<BlockGenus name="tone_time" kind="command" color="95 120 132" initlabel="tone">
 			<description>
-				<text>Generates a square wave of the specified frequency (and 50%
-					duty cycle) on a pin.
+				<text>Generates a square wave of the specified frequency (and 50% duty cycle) on a pin.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -429,11 +418,7 @@
 		<BlockGenus name="addition" kind="function" initlabel="bg.addition" color="149 193 31">
 			<description>
 				<text>
-					Reports the sum of two numbers (
-					<arg n="1" />
-					+
-					<arg n="2" />
-					).
+					Add two numbers together.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -449,11 +434,7 @@
 		<BlockGenus name="subtraction" kind="function" initlabel="bg.subtraction" color="149 193 31">
 			<description>
 				<text>
-					Reports the difference of two numbers (
-					<arg n="1" />
-					-
-					<arg n="2" />
-					).
+					Subtract one number from another.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -469,11 +450,7 @@
 		<BlockGenus name="multiplication" kind="function" initlabel="bg.multiplication" color="149 193 31">
 			<description>
 				<text>
-					Reports the product of two numbers (
-					<arg n="1" />
-					x
-					<arg n="2" />
-					).
+					Multiply two numbers together.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -489,11 +466,7 @@
 		<BlockGenus name="division" kind="function" initlabel="bg.division" color="149 193 31">
 			<description>
 				<text>
-					Reports the quotient of two numbers (
-					<arg n="1" />
-					÷
-					<arg n="2" />
-					).
+					Divide one number by another.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -507,6 +480,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="modulo" kind="function" color="149 193 31" initlabel="bg.modulo">
+			<description>
+			<text>
+				Find the remainder of one number divided by another.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector label="" connector-kind="plug" connector-type="number" position-type="mirror" >
 					<!-- CLUDGE:: This apparently daft line enables 'clone' to work correctly on this BlockGenus -->
@@ -518,6 +496,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="abs" kind="function" color="149 193 31" initlabel="bg.abs">
+			<description>
+			<text>
+				Take the absolute value of a number.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 				<BlockConnector connector-type="number" connector-kind="socket" />
@@ -525,6 +508,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="pow" kind="function" color="149 193 31" initlabel="bg.pow">
+			<description>
+			<text>
+				Raise a number to a power.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.base" />
@@ -533,6 +521,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="sqrt" kind="function" color="149 193 31" initlabel="bg.sqrt">
+			<description>
+			<text>
+				Take the square root of a number.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 				<BlockConnector connector-type="number" connector-kind="socket" />
@@ -540,6 +533,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="sin" kind="function" color="149 193 31" initlabel="bg.sin">
+			<description>
+			<text>
+				Take the sine of a value.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 				<BlockConnector connector-type="number" connector-kind="socket" />
@@ -547,6 +545,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="cos" kind="function" color="149 193 31" initlabel="bg.cos">
+			<description>
+			<text>
+				Take the cosine of a value.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 				<BlockConnector connector-type="number" connector-kind="socket" />
@@ -554,6 +557,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="tan" kind="function" color="149 193 31" initlabel="bg.tan">
+			<description>
+			<text>
+				Find the tangent of a value.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 				<BlockConnector connector-type="number" connector-kind="socket" />
@@ -562,7 +570,7 @@
 
 		<BlockGenus name="random" kind="data" color="149 193 31" initlabel="bg.random">
 			<description>
-				<text>generate a random number less than the number</text>
+				<text>Generate a random integer between 0 and a specified value.</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
@@ -574,7 +582,7 @@
 
 		<BlockGenus name="random_range" kind="function" color="149 193 31" initlabel="bg.pow">
 			<description>
-				<text>Generate random number between min and (max - 1)</text>
+				<text>Generate random integer between min and (max - 1)</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
@@ -588,6 +596,11 @@
 		</BlockGenus>
 		
 		<BlockGenus name="min" kind="function" color="149 193 31" initlabel="bg.min">
+			<description>
+			<text>
+				Compare two values and return the minimum.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" >
 					<!-- CLUDGE:: This apparently daft line enables 'clone' to work correctly on this BlockGenus -->
@@ -599,6 +612,11 @@
 		</BlockGenus>
 
 		<BlockGenus name="max" kind="function" color="149 193 31" initlabel="bg.max">
+			<description>
+			<text>
+				Compare two values and return the maximum.
+			</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" >
 					<!-- CLUDGE:: This apparently daft line enables 'clone' to work correctly on this BlockGenus -->
@@ -610,7 +628,7 @@
 		</BlockGenus>
 		<BlockGenus name="map_common" kind="data" color="149 193 31" initlabel="bg.map_common">
 			<description>
-				<text>map value from [0, 1023] to [0, 255]</text>
+				<text>Map a value from [0, 1023] to [0, 255]</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
@@ -622,7 +640,7 @@
 
 		<BlockGenus name="map" kind="function" color="149 193 31" initlabel="bg.map">
 			<description>
-				<text>map</text>
+				<text>Map a value from one range to another.</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
@@ -662,7 +680,7 @@
 
 		<BlockGenus name="greater" kind="function" color="222 131 51" initlabel="bg.greater">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Is the first number GREATER than the second?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -676,7 +694,7 @@
 
 		<BlockGenus name="less" kind="function" color="222 131 51" initlabel="bg.less">
 			<description>
-				<text>is upper number less then lower?</text>
+				<text>Is the first number LESS than the second?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -690,7 +708,7 @@
 
 		<BlockGenus name="equal" kind="function" color="222 131 51" initlabel="bg.equal">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Is the first number EQUAL to the second?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -703,7 +721,7 @@
 		</BlockGenus>
 		<BlockGenus name="equal_digital" kind="function" color="222 131 51" initlabel="bg.equal_digital">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Is the first number EQUAL to the second?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -717,7 +735,7 @@
 
 		<BlockGenus name="greater_equal" kind="function" color="222 131 51" initlabel="bg.greater_equal">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Is the first number GREATER than or EQUAL to the second?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -731,7 +749,7 @@
 
 		<BlockGenus name="less_equal" kind="function" color="222 131 51" initlabel="bg.less_equal">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Is the first number LESS than or EQUAL to the second?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -745,7 +763,7 @@
 
 		<BlockGenus name="not_equal" kind="function" color="222 131 51" initlabel="bg.not_equal">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Are these two values NOT equal?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -759,7 +777,7 @@
 
 		<BlockGenus name="not_equal_digital" kind="function" color="222 131 51" initlabel="bg.not_equal_digital">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Are these two values NOT equal?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -774,7 +792,7 @@
 		<BlockGenus name="and" kind="data" initlabel="bg.and" color="222 131 51">
 			<description>
 				<text>
-					Reports true if both of the two conditions are true.
+					Returns true if both of the two conditions are true.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -788,7 +806,7 @@
 		<BlockGenus name="or" kind="function" initlabel="bg.or" color="222 131 51">
 			<description>
 				<text>
-					Reports true if one or both of the two conditions are true.
+					Returns true if one or both of the two conditions are true.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -801,9 +819,7 @@
 		<BlockGenus name="not" kind="function" initlabel="bg.not" color="222 131 51">
 			<description>
 				<text>
-					Reports the opposite of
-					<arg n="1" />
-					.
+					Reports the opposite of the condition.
 				</text>
 			</description>
 			<BlockConnectors>
@@ -814,7 +830,7 @@
 
 		<BlockGenus name="equal_poly" kind="function" color="222 131 51" initlabel="bg.equal_poly">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Is the first number EQUAL to the second?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -828,7 +844,7 @@
 
 		<BlockGenus name="not_equal_poly" kind="function" color="222 131 51" initlabel="bg.not_equal_poly">
 			<description>
-				<text>is upper number greater then lower?</text>
+				<text>Are these two values NOT equal?</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" >
@@ -843,7 +859,7 @@
 		<!--****************** Numbers/Constants *************** -->
 		<BlockGenus name="millis" kind="data" color="232 156 149" initlabel="bg.millis">
 			<description>
-				<text>Time in milliseconds</text>
+				<text>Program's elapsed time in milliseconds</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
@@ -853,7 +869,7 @@
 		<BlockGenus name="number" kind="data" color="232 156 149" initlabel="bg.number" editable-label="yes">
 			<description>
 				<text>
-					Standard integer constant
+					integer constant
 				</text>
 			</description>
 			<BlockConnectors>
@@ -864,7 +880,7 @@
 		<BlockGenus name="number_long" kind="data" color="255 153 204 " initlabel="bg.number_long" editable-label="yes">
 			<description>
 				<text>
-					'Unsigned Long' constant
+					large integer (unsigned long) constant
 				</text>
 			</description>
 			<BlockConnectors>
@@ -875,7 +891,7 @@
 		<BlockGenus name="number_double" kind="data" color="153 204 255" initlabel="bg.number_double" editable-label="yes">
 			<description>
 				<text>
-					'Double' constant
+					decimal constant
 				</text>
 			</description>
 			<BlockConnectors>
@@ -904,7 +920,7 @@
 		<BlockGenus name="digital-high" kind="data" color="232 156 149" initlabel="bg.digital-high">
 			<description>
 				<text>
-					Pin HIGH
+					pin HIGH
 				</text>
 			</description>
 			<BlockConnectors>
@@ -915,7 +931,7 @@
 		<BlockGenus name="digital-low" kind="data" color="232 156 149" initlabel="bg.digital-low">
 			<description>
 				<text>
-					Pin LOW
+					pin LOW
 				</text>
 			</description>
 			<BlockConnectors>
@@ -927,7 +943,7 @@
 		<BlockGenus name="true" kind="data" initlabel="bg.true" color="232 156 149" editable-label="no">
 			<description>
 				<text>
-					Reports the boolean true.
+					boolean true
 				</text>
 			</description>
 			<BlockConnectors>
@@ -938,7 +954,7 @@
 		<BlockGenus name="false" kind="data" initlabel="bg.false" color="232 156 149">
 			<description>
 				<text>
-					Reports the boolean false.
+					boolean false
 				</text>
 			</description>
 			<BlockConnectors>
@@ -949,7 +965,7 @@
 		<BlockGenus name="variable_number" kind="data" initlabel="bg.variable_number" editable-label="yes" is-label-value="yes" color="230 110 110">
 			<description>
 				<text>
-					Digital Var
+					integer number variable
 				</text>
 			</description>
 			<BlockConnectors>
@@ -960,7 +976,7 @@
 	    <BlockGenus name="variable_number_unsigned_long" kind="data" initlabel="bg.variable_number_unsigned_long" editable-label="yes" is-label-value="yes" color="204 102 153">
 	      <description>
 	        <text>
-	          Unsigned Long Var
+	         larger integer variable (unsigned long)
 	        </text>
 	      </description>
 	      <BlockConnectors>
@@ -971,7 +987,7 @@
 	    <BlockGenus name="variable_number_double" kind="data" initlabel="bg.variable_number_double" editable-label="yes" is-label-value="yes" color="51 153 255">
 	      <description>
 	        <text>
-	          Double
+	          decimal number variable
 	        </text>
 	      </description>
 	      <BlockConnectors>
@@ -982,7 +998,7 @@
 		<BlockGenus name="variable_digital" kind="data" initlabel="bg.variable_digital" editable-label="yes" is-label-value="yes" color="230 110 110">
 			<description>
 				<text>
-					Digital Var
+					digital pin variable
 				</text>
 			</description>
 			<BlockConnectors>
@@ -1006,11 +1022,11 @@
 		
 	    <BlockGenus name="setter_variable_number_unsigned_long" kind="command" color="255 153 204" initlabel="bg.setter_variable_number_unsigned_long">
 	      <description>
-	        <text>set a large integer variable</text>
+	        <text>set a large integer variable (unsigned long)</text>
 	      </description>
 	      <BlockConnectors>
 	        <BlockConnector connector-type="number" connector-kind="socket" label="bc.variable">
-	          <DefaultArg genus-name="variable_number_unsigned_long" label="Large integer variable name" />
+	          <DefaultArg genus-name="variable_number_unsigned_long" label="large integer variable name" />
 	        </BlockConnector>
 	        <BlockConnector connector-type="number" connector-kind="socket" label="bc.value">
 	          <DefaultArg genus-name="number_long" label="1000000" />
@@ -1024,7 +1040,7 @@
 	      </description>
 	      <BlockConnectors>
 	        <BlockConnector connector-type="number" connector-kind="socket" label="bc.variable">
-	          <DefaultArg genus-name="variable_number_double" label="Decimal variable name" />
+	          <DefaultArg genus-name="variable_number_double" label="decimal variable name" />
 	        </BlockConnector>
 	        <BlockConnector connector-type="number" connector-kind="socket" label="bc.value">
 	          <DefaultArg genus-name="number_double" label="3.1415927" />
@@ -1703,7 +1719,7 @@
 		<BlockGenus name="variable_fake" kind="data" initlabel="bg.fake" editable-label="yes" is-label-value="yes" color="204 51 0">
 			<description>
 				<text>
-					Digital Var
+					integer variable
 				</text>
 			</description>
 			<BlockConnectors>
